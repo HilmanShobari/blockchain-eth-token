@@ -48,13 +48,13 @@ module.exports = {
     //  network_id: "*",       // Any network (default: none)
     // },
 
-    sepolia: {
+    mumbai: {
       provider: () =>
         new HDWalletProvider(
           mnemonic,
-          "https://sepolia.infura.io/v3/e66c6786fc4e4498b85dad63f994340c"
+          "https://polygon-mumbai.g.alchemy.com/v2/vcvZrzGeIs5WzICRvEj3IqaKiVrINq96"
         ),
-      network_id: 11155111,
+      network_id: 80001,
       gas: 5500000,
     },
 
@@ -96,7 +96,7 @@ module.exports = {
   // Configure your compilers
   compilers: {
     solc: {
-      version: "0.8.14", // Fetch exact version from solc-bin (default: truffle's version)
+      version: "0.8.18", // Fetch exact version from solc-bin (default: truffle's version)
       // docker: true,        // Use "0.5.1" you've installed locally with docker (default: false)
       // settings: {          // See the solidity docs for advice about optimization and evmVersion
       //  optimizer: {
@@ -130,6 +130,7 @@ module.exports = {
   // }
   plugins: ["truffle-plugin-verify"],
   api_keys: {
-    etherscan: process.env.ETHERSCAN_API_KEY,
+    polygonscan: process.env.POLYGON_API_KEY, //sesuai jaringan
+    // etherscan: process.env.ETHERSCAN_API_KEY,
   },
 };
